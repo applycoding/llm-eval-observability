@@ -1,0 +1,37 @@
+cases:
+  - id: refund-window
+    inputs:
+      question: Can I return a laptop after 40 days?
+      policy: Laptops may be returned within 30 days of delivery.
+    expected_regex: "30 days"
+    reference: Laptops may be returned within 30 days. A return after 40 days is outside the window.
+    tags: [refund]
+  - id: shipping-delay
+    inputs:
+      question: My order is 8 business days late. Can you refund shipping?
+      policy: If a shipment is more than 5 business days late, refund the shipping fee.
+    expected_regex: "5 business days"
+    reference: Refund the shipping fee when a shipment is more than 5 business days late.
+    tags: [shipping]
+  - id: password-reset
+    inputs:
+      question: I forgot the password on my account.
+      policy: Account security is outside this policy. Escalate to the identity team.
+    expected_regex: escalate
+    reference: Escalate account security questions to the identity team.
+    tags: [account]
+  - id: damaged-item
+    inputs:
+      question: The mug arrived cracked today.
+      policy: Report damaged items within 7 days of delivery and we will replace them.
+    expected_regex: "7 days"
+    reference: Damaged items reported within 7 days of delivery are replaced.
+    tags: [damage]
+  - id: exact-ack
+    inputs:
+      question: Please confirm you received this.
+      policy: Reply with the single word received.
+    expected: "Based on our policy: Reply with the single word received. If this does not cover the question, I will escalate."
+    expected_regex: received
+    reference: Reply with the single word received.
+    tags: [exact]

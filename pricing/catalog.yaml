@@ -1,0 +1,6 @@
+# Operators replace these rates with their own. The fake model is free on purpose.
+# A model that is not listed is reported as unknown cost, not as a guessed price.
+models:
+  fake-llm:
+    input_per_million: 0
+    output_per_million: 0
