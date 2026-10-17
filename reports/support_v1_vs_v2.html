@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>support v1 → v2</title>
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      background: #f4f1ea;
+      color: #1c1917;
+      font: 16px/1.5 "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    }
+    main { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    h1 { font-size: 2rem; letter-spacing: -0.03em; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.15rem; margin-top: 2rem; }
+    .meta, .note { color: #44403c; }
+    .note {
+      background: #fff;
+      border-left: 4px solid #0f4c5c;
+      padding: 0.75rem 1rem;
+    }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid #e7e5e4; }
+    th { font: 600 0.78rem/1.2 ui-sans-serif, system-ui, sans-serif; letter-spacing: 0.04em; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .up { color: #1b6b3a; }
+    .down { color: #9a3412; }
+    pre {
+      white-space: pre-wrap;
+      background: #fff;
+      padding: 0.75rem 1rem;
+      border: 1px solid #e7e5e4;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>support v1 → v2</h1>
+  <p class="meta">Suite support_regression. Dataset datasets/support.jsonl. Model fake-llm.</p>
+  <p class="note">Figures in this report are the scores from the runs being compared. They are not a published benchmark and they do not describe a hosted model unless that model produced the runs.</p>
+  <h2>Scorer means</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Scorer</th>
+        <th class="num">v1</th>
+        <th class="num">v2</th>
+        <th class="num">Delta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>exact_reply</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+      <tr><td>policy_regex</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+      <tr><td>reference_similarity</td><td class="num">0.0284</td><td class="num">0.4860</td><td class="num up">+0.4576</td></tr>
+      <tr><td>rubric_judge</td><td class="num">0.0000</td><td class="num">0.8500</td><td class="num up">+0.8500</td></tr>
+    </tbody>
+  </table>
+  <h2>Case scores</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Case</th>
+        <th>Scorer</th>
+        <th class="num">v1</th>
+        <th class="num">v2</th>
+        <th class="num">Delta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>refund-window</td><td>exact_reply</td><td class="num">n/a</td><td class="num">n/a</td><td class="num">n/a</td></tr>
+      <tr><td>refund-window</td><td>policy_regex</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+      <tr><td>refund-window</td><td>reference_similarity</td><td class="num">0.0000</td><td class="num">0.5423</td><td class="num up">+0.5423</td></tr>
+      <tr><td>refund-window</td><td>rubric_judge</td><td class="num">0.0000</td><td class="num">0.5000</td><td class="num up">+0.5000</td></tr>
+      <tr><td>shipping-delay</td><td>exact_reply</td><td class="num">n/a</td><td class="num">n/a</td><td class="num">n/a</td></tr>
+      <tr><td>shipping-delay</td><td>policy_regex</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+      <tr><td>shipping-delay</td><td>reference_similarity</td><td class="num">0.1421</td><td class="num">0.7071</td><td class="num up">+0.5650</td></tr>
+      <tr><td>shipping-delay</td><td>rubric_judge</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+      <tr><td>password-reset</td><td>exact_reply</td><td class="num">n/a</td><td class="num">n/a</td><td class="num">n/a</td></tr>
+      <tr><td>password-reset</td><td>policy_regex</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+      <tr><td>password-reset</td><td>reference_similarity</td><td class="num">0.0000</td><td class="num">0.5715</td><td class="num up">+0.5715</td></tr>
+      <tr><td>password-reset</td><td>rubric_judge</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+      <tr><td>damaged-item</td><td>exact_reply</td><td class="num">n/a</td><td class="num">n/a</td><td class="num">n/a</td></tr>
+      <tr><td>damaged-item</td><td>policy_regex</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+      <tr><td>damaged-item</td><td>reference_similarity</td><td class="num">0.0000</td><td class="num">0.0000</td><td class="num">0.0000</td></tr>
+      <tr><td>damaged-item</td><td>rubric_judge</td><td class="num">0.0000</td><td class="num">0.7500</td><td class="num up">+0.7500</td></tr>
+      <tr><td>exact-ack</td><td>exact_reply</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+      <tr><td>exact-ack</td><td>policy_regex</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+      <tr><td>exact-ack</td><td>reference_similarity</td><td class="num">0.0000</td><td class="num">0.6093</td><td class="num up">+0.6093</td></tr>
+      <tr><td>exact-ack</td><td>rubric_judge</td><td class="num">0.0000</td><td class="num">1.0000</td><td class="num up">+1.0000</td></tr>
+    </tbody>
+  </table>
+  <h2>Usage</h2>
+  <table><thead><tr><th>Version</th><th>Task tokens</th><th>Judge tokens</th><th>Latency ms</th><th>Cost USD</th><th>Cost known</th></tr></thead><tbody>
+      <tr><td>1</td><td>166</td><td>469</td><td>0.0</td><td>0.000000</td><td>yes</td></tr>
+      <tr><td>2</td><td>337</td><td>527</td><td>0.0</td><td>0.000000</td><td>yes</td></tr>
+    </tbody></table>
+  <h2>Outputs</h2>
+  <h3>refund-window</h3>
+<p>Version 1</p>
+<pre>Thanks for reaching out. I will look into that and follow up shortly.</pre>
+<p>Version 2</p>
+<pre>Based on our policy: Laptops may be returned within 30 days of delivery. If this does not cover the question, I will escalate.</pre>
+<h3>shipping-delay</h3>
+<p>Version 1</p>
+<pre>Thanks for reaching out. I will look into that and follow up shortly.</pre>
+<p>Version 2</p>
+<pre>Based on our policy: If a shipment is more than 5 business days late, refund the shipping fee. If this does not cover the question, I will escalate.</pre>
+<h3>password-reset</h3>
+<p>Version 1</p>
+<pre>Thanks for reaching out. I will look into that and follow up shortly.</pre>
+<p>Version 2</p>
+<pre>Based on our policy: Account security is outside this policy. Escalate to the identity team. If this does not cover the question, I will escalate.</pre>
+<h3>damaged-item</h3>
+<p>Version 1</p>
+<pre>Thanks for reaching out. I will look into that and follow up shortly.</pre>
+<p>Version 2</p>
+<pre>Based on our policy: Report damaged items within 7 days of delivery and we will replace them. If this does not cover the question, I will escalate.</pre>
+<h3>exact-ack</h3>
+<p>Version 1</p>
+<pre>Thanks for reaching out. I will look into that and follow up shortly.</pre>
+<p>Version 2</p>
+<pre>Based on our policy: Reply with the single word received. If this does not cover the question, I will escalate.</pre>
+</main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+id: support_regression
+prompt_id: support
+dataset: datasets/support.jsonl
+model: fake-llm
+price_catalog: pricing/catalog.yaml
+scorers:
+  - name: exact_reply
+    type: exact
+  - name: policy_regex
+    type: regex
+  - name: reference_similarity
+    type: embedding
+    threshold: 0.15
+  - name: rubric_judge
+    type: llm_judge
+    rubric: rubrics/support_quality.yaml

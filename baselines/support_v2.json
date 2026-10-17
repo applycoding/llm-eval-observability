@@ -1,0 +1,14 @@
+{
+  "note": "Scores from the checked-in fake model on this dataset. Not a published benchmark.",
+  "suite_id": "support_regression",
+  "prompt_id": "support",
+  "prompt_version": "2",
+  "dataset": "datasets/support.jsonl",
+  "model": "fake-llm",
+  "scorer_means": {
+    "exact_reply": 1.0,
+    "policy_regex": 1.0,
+    "reference_similarity": 0.486041,
+    "rubric_judge": 0.85
+  }
+}

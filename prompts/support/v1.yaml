@@ -1,0 +1,7 @@
+id: support
+version: "1"
+description: Generic support reply. This version does not include the policy.
+template: |
+  You are a customer support assistant.
+  Answer the customer in two sentences.
+  Customer: {{ question }}

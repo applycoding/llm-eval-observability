@@ -1,0 +1,10 @@
+id: support_quality
+scale_min: 1
+scale_max: 5
+criteria:
+  - id: faithfulness
+    description: The reply states only facts that appear in the policy or reference, and does not invent rules.
+    weight: 0.6
+  - id: helpfulness
+    description: The reply answers the customer, or says it will escalate when the policy is silent.
+    weight: 0.4
