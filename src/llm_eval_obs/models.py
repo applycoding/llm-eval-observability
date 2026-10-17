@@ -1,6 +1,7 @@
 """Data records passed between the runner, scorers, report, and gate."""
 
 from dataclasses import dataclass
+from typing import ClassVar
 
 
 @dataclass(frozen=True)
@@ -13,6 +14,8 @@ class PromptTemplate:
 
 @dataclass(frozen=True)
 class TestCase:
+    # Pytest collects classes named Test* imported into test modules.
+    __test__: ClassVar[bool] = False
     id: str
     inputs: dict[str, str]
     expected: str | None = None

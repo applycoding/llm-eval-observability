@@ -26,7 +26,7 @@ def run_from_dict(data: object) -> EvalRun:
     return EvalRun(
         prompt_id=_text(body, "prompt_id"),
         prompt_version=_text(body, "prompt_version"),
-        prompt_description=_text(body, "prompt_description"),
+        prompt_description=_text(body, "prompt_description", allow_empty=True),
         dataset=_text(body, "dataset"),
         model=_text(body, "model"),
         suite_id=_text(body, "suite_id"),
